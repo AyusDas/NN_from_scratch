@@ -44,6 +44,7 @@ for e in range(epochs):
         cce += -np.sum( y * np.log(softmax) )/4
         acc += int(np.argmax(softmax) == np.argmax(y))
         grad = softmax - y
+        
         #backwards
         #softmax derivative in Jacobian Form
         softmax_grad = softmax * (np.identity(3) - softmax.T)
